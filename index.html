@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Hello</h1>
     <script>
         $(function () {
-            var connection = new WebSocket('ws://'+window.location.hostname+'/ws');  
+            var connection = new WebSocket('ws://'+'http://ctf03.root-me.org'+'/ws');  
             connection.onopen = function (message) {
                 connection.send('Hello, world');
             };  
